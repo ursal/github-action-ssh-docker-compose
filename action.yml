@@ -1,5 +1,5 @@
 name: SSH-Compose
-description: SSH into host and deploy repository with Docker-Compose
+description: SSH into host and deploy repository with Docker Compose
 branding:
   icon: server
   color: purple
@@ -18,7 +18,7 @@ inputs:
     description: Remote user name.
     required: true
   docker_compose_prefix:
-    description: Prefix for docker-compose containers.
+    description: Prefix for docker compose containers.
     required: true
   docker_compose_filename:
     description: Docker compose file to use
@@ -27,7 +27,7 @@ inputs:
     description: Use docker stack instead of docker compose ("true" or "false").
     default: 'false'
   docker_compose_down:
-    description: Execute docker-compose-down ("true" or "false").
+    description: Execute docker compose-down ("true" or "false").
     default: 'false'
 runs:
   using: docker
