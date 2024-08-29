@@ -17,6 +17,14 @@ inputs:
   ssh_user:
     description: Remote user name.
     required: true
+  project_directory:
+    description: Directory used for deploying project files.
+    required: false
+    default: 'workspace'
+  remove_project_directory:
+    description: Remove project directory after deploy.
+    required: false
+    default: 'true'
   docker_compose_prefix:
     description: Prefix for docker compose containers.
     required: true
@@ -29,6 +37,7 @@ inputs:
   docker_compose_down:
     description: Execute docker compose-down ("true" or "false").
     default: 'false'
+
 runs:
   using: docker
   image: Dockerfile
@@ -37,6 +46,8 @@ runs:
     SSH_HOST: ${{ inputs.ssh_host }}
     SSH_PORT: ${{ inputs.ssh_port }}
     SSH_PRIVATE_KEY: ${{ inputs.ssh_private_key }}
+    PROJECT_DIRECTORY: ${{ inputs.project_directory }}
+    REMOVE_PROJECT_DIRECTORY: ${{ inputs.remove_project_directory }}
     DOCKER_COMPOSE_FILENAME: ${{ inputs.docker_compose_filename }}
     DOCKER_COMPOSE_PREFIX: ${{ inputs.docker_compose_prefix }}
     USE_DOCKER_STACK: ${{ inputs.use_stack }}

@@ -16,6 +16,8 @@ unknown docker-images. It is entirely built from Dockerfile on top of
  * `ssh_host` - Remote host name.
  * `ssh_port` - Remote port for SSH connection. Default is 22.
  * `ssh_user` - Remote user which should have access to docker.
+ * `project_directory` - Directory to store project files.
+ * `remove_project_directory` - Remove project directory after deployment.
  * `docker_compose_prefix` - Project name passed to compose. Each docker
    container will have this prefix in name.
  * `docker_compose_filename` - Path to the docker compose file in the repository.
